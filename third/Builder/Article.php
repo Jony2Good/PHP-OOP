@@ -1,6 +1,6 @@
 <?php
 
-namespace third;
+namespace third\Builder;
 
 class Article
 {
