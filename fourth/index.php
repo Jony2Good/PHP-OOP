@@ -1,15 +1,17 @@
 <?php
-
-use app\Router\Router;
+var_dump($_SERVER['DOCUMENT_ROOT']);
 
 include_once('init.php');
+
+use app\Router\Router;
+use app\Controller\Controller as AC;
 
 const BASE_URL = '/PHP-OOP/fourth/';
 $router = new Router(BASE_URL);
 
-$router->addRoute('', 'ArticlesController');
-$router->addRoute('article/1', 'ArticlesController', 'item');
-$router->addRoute('article/2', 'ArticlesController', 'item');
+$router->addRoute('', AC::class);
+$router->addRoute('article/1', AC::class, 'item');
+$router->addRoute('article/2', AC::class, 'item');
 
 $uri = $_SERVER['REQUEST_URI'];
 $activeRoute = $router->resolvePath($uri);

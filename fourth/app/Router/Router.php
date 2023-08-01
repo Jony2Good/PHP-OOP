@@ -2,7 +2,7 @@
 
 namespace app\Router;
 
-use app\Controller\ArticlesController;
+use app\Controller\Controller;
 
 class Router
 {
@@ -31,8 +31,7 @@ class Router
         $relativeUrl = substr($url, $this->baseShift);
         $route = $this->findPath($relativeUrl);
         $params = explode('/', $relativeUrl);
-//        $controller = new $route['c']();
-        $controller = new ArticlesController();
+        $controller = new $route['c']();
         $controller->setEnvironment($params);
         return [
             'controller' => $controller,
