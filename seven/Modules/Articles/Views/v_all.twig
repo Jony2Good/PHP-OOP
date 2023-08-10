@@ -1,0 +1,10 @@
+<h1>Home</h1>
+{% for article in articles %}
+<div class="article-item">
+	<h2>{{ article.title }}</h2>
+	<div class="dt">{{ article.dt }}</div>
+	<div class="link">
+		<a href="{{ baseUrl }}article/{{ article.id_article }}">Read more...</a>
+	</div>
+</div>
+{% endfor %}
